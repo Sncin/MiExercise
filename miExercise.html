@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    小米商城 - 小米10 Pro、Redmi K30 Pro、小米MIX Alpha，小米电视官方网站
+  </title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/miExercise.css">
+  <link rel="icon" href="./img/mi-logo.ico">
+</head>
+
+<body>
+  <!-- 最顶部 -->
+  <div class="topbar">
+    <div class="topbar_wapper">
+      <div class="topbar_left">
+        <ul class="topbar_left_guide" id="left_guide">
+          <li class="topbar_left_guide_li"> <a href="javascript:;">小米商城</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">MIUI</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">IoT</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">云服务</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">天星数科</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">有品</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">小爱开放平台</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">企业团购</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">资质证照</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">协议规则</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li app_a_outer"><a href="javascript:;" class="app_a_outer">下载app</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">智能生活</a></li>
+          <li class="blank"></li>
+          <li class="topbar_left_guide_li"><a href="javascript:;">Select Location</a></li>
+          <div class="QRcode_wapper">
+            <img src="./img/小米二维码.png" class="QRcode"> 小米商城APP
+          </div>
+        </ul>
+      </div>
+
+      <!-- 顶部右侧购物车 -->
+      <div class="shopping_cart" id="shopping_cart">
+        <a href="javascript:;" class="shopping_cart_a">
+          <i class="glyphicon glyphicon-shopping-cart"></i>购物车 ({{cart.length}})
+          <!-- 显示购物车内有几件商品 -->
+        </a>
+        <div class="shopping_cart_menu">
+          <!-- 如果购物车没有商品，则显示空白信息 -->
+          <span v-if="cart.length==0" class="shopping_cart_menu_empty">购物车中还没有商品，赶紧选购吧！</span>
+          <!-- 如果购物车内有商品，则显示商品信息 -->
+          <ul v-if="cart.length!==0" class="shopping_cart_menu_goods">
+            <li v-for="items in cart">
+              <span>商品名称：{{items.name}}</span> | <span>数量:{{items.count}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="login">
+        <li class="topbar_left_login_li"><a href="javascript:;">登录</a></li>
+        <li class="login_blank"></li>
+        <li class="topbar_left_login_li"><a href="javascript:;">注册</a></li>
+        <li class="login_blank"></li>
+        <li class="topbar_left_login_li"><a href="javascript:;">消息通知</a></li>
+      </div>
+    </div>
+  </div>
+  <!-- 顶部导航栏设计完成 -->
+
+  <div class="site_top">
+    <div class="site_top_inner">
+      <div class="logo" title="小米官网"><a class="mi" href="javascript:;"></a><a class="mi_home" href="javascript:;"></a>
+      </div>
+      <div class="site_top_nav">
+        <ul class="site_top_nav_list" id="nav_list">
+          <li v-for="items in navList"><a href="javascript:;">{{items}}</a></li>
+          <li><a href="javascript:;">服务</a></li>
+          <li><a href="javascript:;">社区</a></li>
+          <!-- 下面一行注释掉的是下拉框，内无数据 -->
+          <!-- <div class="goods"></div> -->
+        </ul>
+      </div>
+      <div class="search_wrapper">
+        <form class="search" action="#">
+          <input class="search_inp" type="text" placeholder="小米10">
+          <button class="search_btn"><i class="glyphicon glyphicon-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- 头部设计完成 -->
+
+  <div class="main" id="main">
+    <ul class="left_menu" id="left_menu">
+      <li v-for='items in leftMenuArr'><a href="#">{{items}}<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+    </ul>
+    <ul class="banner" id="banner">
+      <li class="clearfix"><a href="#"><img :src="imgArr[index]"></a></li>
+      <div class="pointer">
+        <a href="javascript:;" v-for="(items,iIndex) in imgArr" :class="{active:index==iIndex}"
+          @mouseenter="index=iIndex"> </a>
+      </div>
+      <div class="prev_next">
+        <a id="prev" @click="prev" href="javascript:;"> </a>
+        <a id="next" @click="next" href="javascript:;"> </a>
+      </div>
+    </ul>
+  </div>
+  <!-- banner设计完成 -->
+
+  <div class="right" id="right">
+    <ul>
+      <li v-for="items in right"><i :class=items[0]></i><span>{{items[1]}}</span></li>
+    </ul>
+  </div>
+  <!-- 右侧工具栏设计完成 -->
+
+  <div class="footer">
+    <div class="ad">
+      <ul class="shortcut" id="shortcut">
+        <li v-for="(items,index) in scArr"><a class="clearfix" href="javascript:;"><i
+              :class=items[1]></i>{{items[0]}}</a></li>
+      </ul>
+      <ul class="ad_img">
+        <li><a href="javascript:;"><img src="./img/miad1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/miad2.jpg"></a></li>
+        <li><a href="javascript:;"><img src="./img/miad3.jpg"></a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="./js/vue.js"></script>
+  <script src="./js/miExercise.js"></script>
+</body>
+
+</html>

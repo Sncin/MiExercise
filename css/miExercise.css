@@ -1,0 +1,587 @@
+html {
+  overflow-x: hidden;
+}
+
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+a, a:hover, a:visited, a:link {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.topbar {
+  width: 1920px;
+  height: 40px;
+  background-color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.topbar_wapper {
+  width: 1226px;
+  height: 40px;
+  margin: 0 339px;
+}
+
+.topbar_left, .topbar_left_guide_li, .blank {
+  float: left;
+}
+
+.topbar_left {
+  height: 40px;
+}
+
+.topbar_left_guide {
+  height: 40px;
+  padding: 0;
+}
+
+.topbar_left_guide_li {
+  height: 40px;
+  line-height: 40px;
+  margin-right: 8px;
+}
+
+.topbar_left_guide_li a, .topbar_left_login_li a {
+  color: rgb(176, 176, 176);
+  display: block;
+}
+
+.topbar_left_guide_li a:hover, .topbar_left_login_li a:hover, .app_a_outer:hover {
+  color: #fff;
+}
+
+.blank, .login_blank {
+  width: 1px;
+  height: 13px;
+  margin-top: 13px;
+  margin-right: 8px;
+  background-color: rgb(66, 66, 66);
+}
+
+.app_a_outer {
+  position: relative;
+}
+
+.app_a_outer::after {
+  display: none;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: none;
+  border-bottom-color: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.QRcode_wapper {
+  display: none;
+  float: left;
+  position: relative;
+  text-align: center;
+  padding-top: 115px;
+  font-size: 14px;
+  width: 125px;
+  height: 150px;
+  background-color: #fff;
+  left: -255px;
+  top: 40px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  transition: height 0.3s;
+}
+
+.QRcode {
+  width: 87px;
+  position: absolute;
+  top: 19px;
+  left: 19px;
+}
+
+.app_a_outer:hover~.QRcode_wapper, .QRcode_wapper:hover, .app_a_outer:hover::after {
+  display: block;
+}
+
+.shopping_cart {
+  margin-left: 15px;
+  text-align: center;
+  float: right;
+  background-color: rgb(66, 66, 66);
+}
+
+.shopping_cart_a {
+  display: block;
+  position: relative;
+  color: rgb(176, 176, 176);
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  z-index: 20;
+}
+
+.shopping_cart:hover .shopping_cart_a {
+  background-color: #fff;
+}
+
+.shopping_cart:hover .shopping_cart_a {
+  background-color: #fff;
+  color: rgb(255, 103, 0);
+  border-bottom: #fff 1px solid;
+}
+
+.shopping_cart_menu {
+  position: absolute;
+  left: 1245px;
+  width: 320px;
+  height: 0px;
+  overflow: hidden;
+  vertical-align: middle;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: height 0.3s;
+}
+
+.shopping_cart_menu_empty {
+  line-height: 100px;
+}
+
+.shopping_cart_menu_goods li {
+  float: left;
+}
+
+.shopping_cart:hover .shopping_cart_menu {
+  display: block;
+  height: 100px;
+}
+
+.login {
+  float: right;
+}
+
+.login_blank {
+  float: right;
+}
+
+.topbar_left_login_li {
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 8px;
+}
+
+/* 顶部导航栏设计完成 */
+
+.site_top {
+  height: 100px;
+  position: relative;
+}
+
+.site_top_inner {
+  height: 100px;
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+  position: relative;
+  width: 55px;
+  height: 55px;
+  margin-top: 22px;
+  margin-right: 130px;
+  overflow: hidden;
+}
+
+.logo a {
+  position: absolute;
+  content: "";
+  width: 55px;
+  height: 55px;
+  background-color: rgb(255, 103, 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: left 0.2s;
+}
+
+.mi {
+  left: 0;
+  background-image: url(../img/mi-logo.png);
+}
+
+.mi_home {
+  left: -55px;
+  background-image: url(../img/mi-home.png);
+}
+
+.logo:hover .mi {
+  left: 55px;
+}
+
+.logo:hover .mi_home {
+  left: 0;
+}
+
+/* logo设计完成 */
+
+.site_top_nav {
+  float: left;
+}
+
+.site_top_nav_list li {
+  float: left;
+  line-height: 100px;
+}
+
+.site_top_nav_list li a {
+  font-size: 16px;
+  color: #333;
+  margin: 0 10px;
+}
+
+.site_top_nav_list li a:hover {
+  color: rgb(255, 103, 0);
+}
+
+.goods {
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.3s;
+  background-color: #fff;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 9999;
+}
+
+.site_top_nav_list li:not(:last-of-type):not(:nth-child(8)):hover~.goods, .goods:hover {
+  height: 228px;
+  border-top: 1px solid rgb(224, 224, 224);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.search_wrapper {
+  float: right;
+  width: 296px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 25px;
+  background-color: red;
+}
+
+.search_inp {
+  float: left;
+  width: 244px;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid rgb(224, 224, 224);
+  font-size: 14px;
+  outline: none;
+}
+
+.search_inp:focus, .search_inp:focus~.search_btn {
+  border: 1px solid rgb(255, 103, 0);
+}
+
+.search_inp:focus~.search_btn {
+  border-left: none;
+}
+
+.search_btn {
+  float: left;
+  height: 50px;
+  width: 52px;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid rgb(224, 224, 224);
+  border-left: none;
+  transition: background-color 0.2s;
+  outline: none;
+}
+
+.search_btn i {
+  color: #616161;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.search_btn:hover {
+  background-color: rgb(255, 103, 0);
+  border: 1px solid rgb(255, 103, 0);
+  border-left: none;
+}
+
+.search_btn:hover i {
+  color: #fff;
+}
+
+/* 头部设计完成 */
+
+.main {
+  width: 1226px;
+  height: 460px;
+  margin: 0 auto;
+}
+
+.left_menu {
+  position: absolute;
+  float: left;
+  width: 234px;
+  height: 460px;
+  padding-top: 20px;
+  padding-left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.left_menu li {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+}
+
+.left_menu li:hover {
+  background-color: rgb(255, 103, 0);
+}
+
+.left_menu li a {
+  display: block;
+  height: 42px;
+  color: #fff;
+  padding-left: 40px;
+}
+
+.left_menu li a i {
+  font-size: 16px;
+  float: right;
+  margin-top: 12.5px;
+  padding-right: 20px;
+}
+
+.banner {
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 460px;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+.banner li img {
+  position: absolute;
+  width: 100%;
+  height: 460px;
+  float: left;
+  z-index: 0;
+}
+
+#li1 {
+  z-index: 1;
+}
+
+.pointer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  z-index: 9999;
+}
+
+.pointer a {
+  display: block;
+  float: left;
+  box-sizing: content-box;
+  width: 6px;
+  height: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-right: 6px;
+  z-index: 9999;
+}
+
+.pointer a:hover, .pointer a.active {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.prev_next a {
+  display: block;
+  width: 41px;
+  height: 69px;
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  z-index: 10;
+}
+
+#prev {
+  left: 234px;
+  background-image: url(../img/icon-slides.png);
+  background-position-x: 83px;
+}
+
+#next {
+  right: 0;
+  background-image: url(../img/icon-slides.png);
+  background-position-x: 42px;
+}
+
+#prev:hover {
+  background-position-x: 0;
+}
+
+#next:hover {
+  background-position-x: 123px;
+}
+
+/* bannner设计完成 */
+
+.right {
+  width: 84px;
+  height: 560px;
+  position: fixed;
+  bottom: 150px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.right ul {
+  padding: 0;
+}
+
+.right ul li {
+  width: 100%;
+  height: 112px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.right ul li:last-of-type {
+  border: none;
+}
+
+.right ul li i {
+  font-size: 25px;
+  float: left;
+  color: #757575;
+  padding-left: 30px;
+  padding-top: 30px;
+  transition: color 0.2s;
+}
+
+.right ul li span {
+  display: block;
+  padding-top: 80px;
+  font-size: 14px;
+  text-align: center;
+  color: #757575;
+  transition: color 0.2s;
+}
+
+.right ul li:hover i, .right ul li:hover span {
+  color: rgb(255, 103, 0);
+}
+
+/* 右侧工具栏设计完成 */
+
+.ad {
+  width: 1226px;
+  height: 170px;
+  margin: 0 auto;
+  margin-top: 14px;
+}
+
+.shortcut, .ad_img, .ad li {
+  padding: 0;
+  float: left;
+}
+
+.shortcut {
+  width: 234px;
+  height: 170px;
+  background-color: #5f5750;
+  margin-right: 14px;
+  color: #cfccca;
+}
+
+.shortcut li {
+  position: relative;
+}
+
+.shortcut li::before {
+  content: "";
+  position: absolute;
+  width: 64px;
+  height: 1px;
+  background-color: #665e57;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+}
+
+.shortcut li::after {
+  content: "";
+  position: absolute;
+  background-color: #665e57;
+  width: 1px;
+  height: 64px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.shortcut a {
+  display: block;
+  width: 76px;
+  height: 84px;
+  color: #cfccca;
+  text-align: center;
+  font-size: 12px;
+  overflow: hidden;
+  transition: color 0.2s;
+}
+
+.shortcut i {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+.shortcut a:hover {
+  color: #fff;
+}
+
+.ad_img li {
+  width: 316px;
+  height: 170px;
+  margin-right: 15px;
+}
+
+.ad_img li:last-child {
+  margin-right: 0;
+}
+
+.ad_img img {
+  width: 100%;
+  vertical-align: top;
+}
